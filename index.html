@@ -25,26 +25,34 @@
     <div class="container">
       <h1>Uzupełnij formularz</h1>
       <form id="form">
-        <div class="mb-3">
-          <label for="firstName" class="form-label">Wpisz imię</label>
-          <input
-            type="text"
-            class="form-control"
-            id="firstName"
-            placeholder="Imię"
-            required
-          />
+        <!-- Dane osobowe -->
+        <div class="row">
+          <div class="col">
+            <div class="mb-3">
+              <label for="firstName" class="form-label">Wpisz imię</label>
+              <input
+                type="text"
+                class="form-control"
+                id="firstName"
+                placeholder="Imię"
+                required
+              />
+            </div>
+          </div>
+          <div class="col">
+            <div class="mb-3">
+              <label for="lastName" class="form-label">Wpisz nazwisko</label>
+              <input
+                type="text"
+                class="form-control"
+                id="lastName"
+                placeholder="Nazwisko"
+                required
+              />
+            </div>
+          </div>
         </div>
-        <div class="mb-3">
-          <label for="lastName" class="form-label">Wpisz nazwisko</label>
-          <input
-            type="text"
-            class="form-control"
-            id="lastName"
-            placeholder="Nazwisko"
-            required
-          />
-        </div>
+        <!-- Dane adresowe -->
         <div class="mb-3">
           <label for="street" class="form-label">Wpisz nazwę ulicy</label>
           <input
@@ -55,6 +63,32 @@
             required
           />
         </div>
+        <div class="row">
+          <div class="col">
+            <div class="mb-3">
+                <label for="zipCode" class="form-label">Wpisz kod pocztowy</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="zipCode"
+                  placeholder="Kod pocztowy"
+                  required
+                />
+              </div>
+          </div>
+          <div class="col">
+            <div class="mb-3">
+                <label for="city" class="form-label">Wpisz miasto</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="city"
+                  placeholder="Miasto"
+                  required
+                />
+          </div>
+        </div>
+        <!-- Dane kontaktowe -->
         <div class="mb-3">
           <label for="country" class="form-label">Wybierz kraj z listy</label>
           <select class="form-select" id="country" required>
@@ -86,26 +120,7 @@
             />
           </div>
         </div>
-        <div class="mb-3">
-          <label for="city" class="form-label">Wpisz miasto</label>
-          <input
-            type="text"
-            class="form-control"
-            id="city"
-            placeholder="Miasto"
-            required
-          />
-        </div>
-        <div class="mb-3">
-          <label for="zipCode" class="form-label">Wpisz kod pocztowy</label>
-          <input
-            type="text"
-            class="form-control"
-            id="zipCode"
-            placeholder="Kod pocztowy"
-            required
-          />
-        </div>
+        <!-- Opcje zamówienia -->
         <div class="mb-3">
           <label for="shippingMethod" class="form-label"
             >Wskaż rodzaj przesyłki</label
@@ -126,6 +141,39 @@
             <option value="blik">BLIK</option>
             <option value="pośrednik">Pośrednik płatności</option>
           </select>
+        </div>
+        <!-- Dane do faktury -->
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="vatUE" />
+          <label class="form-check-label" for="vatUE"
+            >Zaznacz to pole jeśli obowiązuje Cię VAT UE</label
+          >
+        </div>
+        <div class="mb-3">
+          <label for="vatNumber" class="form-label">Wpisz numer VAT</label>
+          <input
+            type="text"
+            class="form-control"
+            id="vatNumber"
+            aria-describedby="vatHelp"
+            placeholder="Numer VAT"
+          />
+          <div id="vatHelp" class="form-text">
+            Kod kraju państwa członkowskiego i seria cyfr unikalnych dla tego
+            podmiotu gospodarczego.
+          </div>
+        </div>
+        <!-- Dane logowania -->
+        <div class="mb-3">
+          <label for="invoiceData" class="form-label"
+            >Wpisz dane do faktury</label
+          >
+          <textarea
+            class="form-control"
+            id="invoiceData"
+            rows="3"
+            placeholder="Dane do faktury"
+          ></textarea>
         </div>
 
         <div class="mb-3">
@@ -149,39 +197,6 @@
             id="exampleInputPassword1"
             placeholder="Hasło"
           />
-        </div>
-        <!-- Dodatkowe pola, np. dane do faktury -->
-        <div class="mb-3 form-check">
-          <input type="checkbox" class="form-check-input" id="vatUE" />
-          <label class="form-check-label" for="vatUE"
-            >Zaznacz to pole jeśli obowiązuje Cię VAT UE</label
-          >
-        </div>
-        <div class="mb-3">
-          <label for="vatNumber" class="form-label">Wpisz numer VAT</label>
-          <input
-            type="text"
-            class="form-control"
-            id="vatNumber"
-            aria-describedby="vatHelp"
-            placeholder="Numer VAT"
-          />
-          <div id="vatHelp" class="form-text">
-            Kod kraju państwa członkowskiego i seria cyfr unikalnych dla tego
-            podmiotu gospodarczego.
-          </div>
-        </div>
-
-        <div class="mb-3">
-          <label for="invoiceData" class="form-label"
-            >Wpisz dane do faktury</label
-          >
-          <textarea
-            class="form-control"
-            id="invoiceData"
-            rows="3"
-            placeholder="Dane do faktury"
-          ></textarea>
         </div>
 
         <button

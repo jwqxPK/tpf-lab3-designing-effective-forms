@@ -8,6 +8,7 @@
       rel="stylesheet"
     />
     <link href="style.css" rel="stylesheet" />
+    <script type="module" src="authentication.js" defer></script>
     <script src="script.js" defer></script>
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
@@ -23,7 +24,16 @@
 
   <body>
     <div class="container">
-      <h1>Uzupełnij formularz</h1>
+      <!-- Logowanie przez zewnętrznego providera -->
+      <h2>Zaloguj się za pomocą konta Google</h2>
+      <div class="container mt-4 mb-4">
+        <button id="signInButton" class="btn btn-primary">
+          Create Account / Sign In
+        </button>
+        <button id="signOutButton" class="btn btn-secondary">Sign Out</button>
+      </div>
+
+      <h2>Uzupełnij formularz</h2>
       <form id="form">
         <!-- Dane osobowe -->
         <div class="row">
@@ -256,6 +266,7 @@
             placeholder="Hasło"
           />
         </div>
+
         <!-- Przesłanie formularza -->
         <button
           type="submit"

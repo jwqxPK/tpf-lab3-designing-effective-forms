@@ -62,6 +62,14 @@ function getCountryCode(countryName) {
     });
 }
 
+function showSection(sectionId) {
+  const sections = document.querySelectorAll(".form-section");
+  sections.forEach((section) => {
+    section.style.display = "none";
+  });
+  document.getElementById(sectionId).style.display = "block";
+}
+
 (() => {
   // nasłuchiwania na zdarzenie kliknięcia myszką
   document.addEventListener("click", handleClick);

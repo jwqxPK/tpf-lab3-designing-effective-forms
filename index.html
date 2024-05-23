@@ -26,76 +26,83 @@
       <h1>Uzupełnij formularz</h1>
       <form id="form">
         <!-- Dane osobowe -->
-        <div class="row">
-          <div class="col">
-            <div class="mb-3">
-              <label for="firstName" class="form-label">Wpisz imię</label>
-              <input
-                type="text"
-                class="form-control"
-                id="firstName"
-                placeholder="Imię"
-                required
-              />
+        <div id="personalInfo" class="form-section">
+          <h2>Dane kontaktowe i adresowe</h2>
+          <div class="row">
+            <div class="col">
+              <div class="mb-3">
+                <label for="firstName" class="form-label">Wpisz imię</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="firstName"
+                  placeholder="Imię"
+                  required
+                />
+              </div>
             </div>
-          </div>
-          <div class="col">
-            <div class="mb-3">
-              <label for="lastName" class="form-label">Wpisz nazwisko</label>
-              <input
-                type="text"
-                class="form-control"
-                id="lastName"
-                placeholder="Nazwisko"
-                required
-              />
+            <div class="col">
+              <div class="mb-3">
+                <label for="lastName" class="form-label">Wpisz nazwisko</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="lastName"
+                  placeholder="Nazwisko"
+                  required
+                />
+              </div>
             </div>
-          </div>
-        </div>
-        <!-- Dane adresowe -->
-        <div class="mb-3">
-          <label for="street" class="form-label">Wpisz nazwę ulicy</label>
-          <input
-            type="text"
-            class="form-control"
-            id="street"
-            placeholder="Ulica"
-            required
-          />
-        </div>
-        <div class="row">
-          <div class="col">
-            <div class="mb-3">
-              <label for="zipCode" class="form-label">Wpisz kod pocztowy</label>
-              <input
-                type="text"
-                class="form-control"
-                id="zipCode"
-                placeholder="Kod pocztowy"
-                required
-              />
-            </div>
-          </div>
-          <div class="col">
-            <div class="mb-3">
-              <label for="city" class="form-label">Wpisz miasto</label>
-              <input
-                type="text"
-                class="form-control"
-                id="city"
-                placeholder="Miasto"
-                required
-              />
-            </div>
-          </div>
-          <div class="mb-3">
-            <label for="country" class="form-label">Wybierz kraj z listy</label>
-            <select class="form-select" id="country" required>
-              <option value="">Kraj</option>
-              <!-- Options will be filled by JavaScript -->
-            </select>
           </div>
 
+          <!-- Dane adresowe -->
+          <div class="mb-3">
+            <label for="street" class="form-label">Wpisz nazwę ulicy</label>
+            <input
+              type="text"
+              class="form-control"
+              id="street"
+              placeholder="Ulica"
+              required
+            />
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="mb-3">
+                <label for="zipCode" class="form-label"
+                  >Wpisz kod pocztowy</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="zipCode"
+                  placeholder="Kod pocztowy"
+                  required
+                />
+              </div>
+            </div>
+            <div class="col">
+              <div class="mb-3">
+                <label for="city" class="form-label">Wpisz miasto</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="city"
+                  placeholder="Miasto"
+                  required
+                />
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="country" class="form-label"
+                >Wybierz kraj z listy</label
+              >
+              <select class="form-select" id="country" required>
+                <option value="">Kraj</option>
+                <!-- Options will be filled by JavaScript -->
+              </select>
+            </div>
+          </div>
           <!-- Dane kontaktowe -->
           <div class="row mb-3">
             <label for="phoneNumber" class="form-label"
@@ -121,7 +128,19 @@
               />
             </div>
           </div>
-          <!-- Opcje zamówienia -->
+
+          <button
+            type="button"
+            class="btn btn-primary next-btn"
+            onclick="showSection('orderOptions')"
+          >
+            Dalej
+          </button>
+        </div>
+
+        <!-- Opcje zamówienia -->
+        <div id="orderOptions" class="form-section" style="display: none">
+          <h2>Opcje przesyłki</h2>
           <div class="mb-3">
             <label for="shippingMethod" class="form-label"
               >Wskaż rodzaj przesyłki</label
@@ -197,7 +216,6 @@
               </div>
             </div>
           </div>
-          <!-- Dane do faktury -->
           <div class="mb-3">
             <div class="form-check">
               <input type="checkbox" class="form-check-input" id="vatUE" />
@@ -206,65 +224,90 @@
               >
             </div>
           </div>
-        </div>
-        <div class="mb-3">
-          <label for="vatNumber" class="form-label">Wpisz numer VAT</label>
-          <input
-            type="text"
-            class="form-control"
-            id="vatNumber"
-            aria-describedby="vatHelp"
-            placeholder="Numer VAT"
-          />
-          <div id="vatHelp" class="form-text">
-            Kod kraju państwa członkowskiego i seria cyfr unikalnych dla tego
-            podmiotu gospodarczego.
+          <div class="mb-3">
+            <label for="vatNumber" class="form-label">Wpisz numer VAT</label>
+            <input
+              type="text"
+              class="form-control"
+              id="vatNumber"
+              aria-describedby="vatHelp"
+              placeholder="Numer VAT"
+            />
+            <div id="vatHelp" class="form-text">
+              Kod kraju państwa członkowskiego i seria cyfr unikalnych dla tego
+              podmiotu gospodarczego.
+            </div>
           </div>
-        </div>
-        <!-- Dane logowania -->
-        <div class="mb-3">
-          <label for="invoiceData" class="form-label"
-            >Wpisz dane do faktury</label
+
+          <!-- Dane do faktury -->
+          <div class="mb-3">
+            <label for="invoiceData" class="form-label"
+              >Wpisz dane do faktury</label
+            >
+            <textarea
+              class="form-control"
+              id="invoiceData"
+              rows="3"
+              placeholder="Dane do faktury"
+            ></textarea>
+          </div>
+          <button
+            type="button"
+            class="btn btn-secondary prev-btn"
+            onclick="showSection('personalInfo')"
           >
-          <textarea
-            class="form-control"
-            id="invoiceData"
-            rows="3"
-            placeholder="Dane do faktury"
-          ></textarea>
+            Cofnij
+          </button>
+          <button
+            type="button"
+            class="btn btn-primary next-btn"
+            onclick="showSection('loginInfo')"
+          >
+            Dalej
+          </button>
         </div>
 
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label"
-            >Wpisz adres mailowy</label
+        <!-- Dane logowania -->
+        <div id="loginInfo" class="form-section" style="display: none">
+          <h2>Dane logowania</h2>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label"
+              >Wpisz adres mailowy</label
+            >
+            <input
+              type="email"
+              class="form-control"
+              id="exampleInputEmail1"
+              placeholder="Adres mailowy"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label"
+              >Wpisz hasło</label
+            >
+            <input
+              type="password"
+              class="form-control"
+              id="exampleInputPassword1"
+              placeholder="Hasło"
+            />
+          </div>
+          <button
+            type="button"
+            class="btn btn-secondary prev-btn"
+            onclick="showSection('orderOptions')"
           >
-          <input
-            type="email"
-            class="form-control"
-            id="exampleInputEmail1"
-            placeholder="Adres mailowy"
-          />
-        </div>
-        <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label"
-            >Wpisz hasło</label
+            Cofnij
+          </button>
+          <button
+            type="submit"
+            class="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#form-feedback-modal"
           >
-          <input
-            type="password"
-            class="form-control"
-            id="exampleInputPassword1"
-            placeholder="Hasło"
-          />
+            Prześlij formularz
+          </button>
         </div>
-        <!-- Przesłanie formularza -->
-        <button
-          type="submit"
-          class="btn btn-primary"
-          data-bs-toggle="modal"
-          data-bs-target="#form-feedback-modal"
-        >
-          Prześlij formularz
-        </button>
       </form>
     </div>
 
@@ -304,5 +347,15 @@
         </div>
       </div>
     </div>
+
+    <script>
+      function showSection(sectionId) {
+        const sections = document.querySelectorAll(".form-section");
+        sections.forEach((section) => {
+          section.style.display = "none";
+        });
+        document.getElementById(sectionId).style.display = "block";
+      }
+    </script>
   </body>
 </html>
